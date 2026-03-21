@@ -16,12 +16,12 @@ from pathlib import Path
 
 import requests
 import frontmatter
+import keyring
 
 # ---------------------------------------------------------------------------
 # Optional Google Books API key from environment
 # ---------------------------------------------------------------------------
-GOOGLE_BOOKS_API_KEY = os.getenv("GOOGLE_BOOKS_API_KEY", "")
-
+GOOGLE_BOOKS_API_KEY = keyring.get_password("enrich_books", "google_books_api_key")
 
 # ---------------------------------------------------------------------------
 # API helpers
